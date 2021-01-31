@@ -4,7 +4,7 @@ import com.veronicaohashi.studyblog.controllers.requests.CategoryRequest
 import com.veronicaohashi.studyblog.controllers.response.CategoryResponse
 import com.veronicaohashi.studyblog.domain.model.Category
 import org.springframework.stereotype.Component
-import java.util.*
+import java.util.UUID
 
 @Component
 class CategoryMapper {

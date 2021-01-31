@@ -1,8 +1,8 @@
 package com.veronicaohashi.studyblog.controllers.response
 
-import java.util.*
+import java.util.UUID
 
-data class CategoryResponse (
+data class CategoryResponse(
     val id: UUID,
     val name: String
 )
