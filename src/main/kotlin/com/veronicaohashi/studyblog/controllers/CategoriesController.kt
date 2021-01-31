@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.GetMapping
 
 @Controller
-@RequestMapping("/categories")
+@RequestMapping("categories")
 class CategoriesController(
     private val service: CategoryService,
     private val categoryMapper: CategoryMapper
