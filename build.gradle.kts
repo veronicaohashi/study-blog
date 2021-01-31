@@ -6,7 +6,7 @@ plugins {
 	kotlin("jvm") version "1.4.21"
 	kotlin("plugin.spring") version "1.4.21"
 	kotlin("plugin.jpa") version "1.4.21"
-	id("io.gitlab.arturbosch.detekt").version("1.16.0-RC1")
+	id("io.gitlab.arturbosch.detekt").version("1.14.0")
 }
 
 group = "com.veronicaohashi"
@@ -30,8 +30,8 @@ dependencies {
 //	DEVTOOLS
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 //	DETEKT
-	detekt("io.gitlab.arturbosch.detekt:detekt-formatting:1.16.0-RC1")
-	detekt("io.gitlab.arturbosch.detekt:detekt-cli:1.16.0-RC1")
+	detekt("io.gitlab.arturbosch.detekt:detekt-formatting:1.14.0")
+	detekt("io.gitlab.arturbosch.detekt:detekt-cli:1.14.0")
 }
 
 tasks.withType<KotlinCompile> {
@@ -46,7 +46,8 @@ tasks.withType<Test> {
 }
 
 detekt {
-	toolVersion = "1.16.0-RC1"
+	toolVersion = "1..0"
 	config = files("config/detekt/detekt.yml")
 	buildUponDefaultConfig = true
+	autoCorrect = true
 }
