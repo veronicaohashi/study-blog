@@ -36,4 +36,6 @@ class AuthorService(private val repository: AuthorRepository) {
         logger.info("Deleting author $it")
         repository.delete(it)
       }
+
+  fun getAll(): List<Author>? = repository.findAll()
 }

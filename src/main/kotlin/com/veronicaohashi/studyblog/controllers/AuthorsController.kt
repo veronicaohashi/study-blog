@@ -33,6 +33,16 @@ class AuthorsController(
       .getById(id)
       .let { ResponseEntity.ok(authorMapper.toResponse(it!!)) }
 
+  @GetMapping
+  fun getAll(): ResponseEntity<List<AuthorResponse>?> {
+    val authors = authorService.getAll()
+    return if (authors.isNullOrEmpty()) {
+      ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)
+    } else {
+      ResponseEntity.ok(authors.map { authorMapper.toResponse(it) })
+    }
+  }
+
   @PutMapping("{id}")
   fun update(
       @PathVariable id: UUID,
