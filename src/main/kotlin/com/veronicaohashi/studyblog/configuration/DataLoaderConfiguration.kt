@@ -1,0 +1,57 @@
+package com.veronicaohashi.studyblog.configuration
+
+import com.veronicaohashi.studyblog.domain.model.Author
+import com.veronicaohashi.studyblog.domain.model.Category
+import com.veronicaohashi.studyblog.infrastrucure.repository.AuthorRepository
+import com.veronicaohashi.studyblog.infrastrucure.repository.CategoryRepository
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+import org.springframework.boot.CommandLineRunner
+import org.springframework.context.annotation.Configuration
+import java.util.UUID
+
+@Configuration
+class DataLoaderConfiguration(
+    private val categoryRepository: CategoryRepository,
+    private val authorRepository: AuthorRepository
+) : CommandLineRunner {
+
+  private val logger: Logger = LoggerFactory.getLogger(javaClass)
+
+  override fun run(vararg args: String?) {
+    loadCategory()
+    loadAuthor()
+  }
+
+  private fun loadCategory() {
+    if (categoryRepository.count() == 0L) {
+      listOf(
+          Category(
+              id = UUID.fromString("edf6c106-770e-412e-bbde-30eecf9ea4e2"),
+              name = "Technology"
+          ),
+          Category(
+              id = UUID.fromString("edf6c106-770e-412e-bbde-30eecf9ea4e2"),
+              name = "Design"
+          ),
+      ).also { categoryRepository.saveAll(it) }.also { logger.info(it.toString()) }
+    }
+  }
+
+  private fun loadAuthor() {
+    if (authorRepository.count() == 0L) {
+      listOf(
+          Author(
+              id = UUID.fromString("80c18ae9-c9ef-4a92-a513-65fe487180e7"),
+              name = "Fist Author",
+              about = "This is my about"
+          ),
+          Author(
+              id = UUID.fromString("299adaa3-f1f3-4e06-b00d-8e1909920e86"),
+              name = "Veronica",
+              about = "This is my veronica's about"
+          )
+      ).also { authorRepository.saveAll(it) }.also { logger.info(it.toString()) }
+    }
+  }
+}
