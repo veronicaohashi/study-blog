@@ -15,7 +15,7 @@ class CategoryMapper {
   )
 
   fun toResponse(category: Category) = CategoryResponse(
-      id = UUID.randomUUID(),
+      id = category.id,
       name = category.name
   )
 }
