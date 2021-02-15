@@ -1,17 +1,17 @@
 package com.veronicaohashi.studyblog.controllers.requests
 
 import java.util.UUID
-import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotEmpty
 
 data class PostRequest(
-    @NotBlank
+    @field:NotEmpty(message = "The post title can not be empty")
     val title: String,
-    @NotBlank
+    @field:NotEmpty(message = "The post subtitle can not be empty")
     val subtitle: String,
-    @NotBlank
+    @field:NotEmpty(message = "The post content can not be empty")
     val content: String,
-    @NotBlank
+    @field:NotEmpty(message = "The post should be associated with an author")
     val authorId: UUID,
-    @NotBlank
+    @field:NotEmpty(message = "The post should be associated with one or more categories")
     val categoryIds: List<UUID>
 )

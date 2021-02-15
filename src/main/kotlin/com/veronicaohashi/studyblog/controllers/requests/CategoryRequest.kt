@@ -1,8 +1,8 @@
 package com.veronicaohashi.studyblog.controllers.requests
 
-import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotEmpty
 
 data class CategoryRequest(
-    @NotBlank
+    @field:NotEmpty(message = "The category name can not be empty")
     val name: String
 )

@@ -1,9 +1,9 @@
 package com.veronicaohashi.studyblog.controllers.requests
 
-import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotNull
 
 data class AuthorRequest(
-    @NotBlank
+    @field:NotNull(message = "The author name can not be null")
     val name: String,
     val about: String? = null
 )
