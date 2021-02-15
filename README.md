@@ -20,15 +20,27 @@ This project is a study case of some spring modules using kotlin
     - [ ] Posts
       - [x] Create Posts
       - [x] List All Posts
-      - [ ] List Posts by id
+      - [ ] List Posts by id (Request params)
       - [ ] Update Posts
       - [ ] Delete Posts
+      - [ ] List All Posts and add pagination, filter by author name or id, order by date 
+      - [ ] Authors can only edit their own posts
+  
+    - [ ] Tests MockK
+    - [x] Custom Exceptions
+    - [x] Global Handler
+    - [x] Field Validation
+    - [x] Field Validation Handler
+    - [ ] Pagination, sort 
       
 - [ ] Configuration
-    - [ ] Open API
-    - [ ] Swagger
-    - [ ] Detekt
-    - [ ] PostgresDB with docker
+    - [ ] Open API - NEXT
+    - [ ] Swagger - NEXT
+    - [x] Detekt
+    - [ ] PostgresDB with docker - NEXT
     - [ ] CI
+    - [ ] Sentry
+    - [ ] Logentries
+    - [ ] Agregador de log
 
    
