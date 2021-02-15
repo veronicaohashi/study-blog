@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import javax.validation.Valid
 
 @Controller
 @RequestMapping("posts")
@@ -20,7 +21,7 @@ class PostsController(
 ) {
 
   @PostMapping
-  fun create(@RequestBody post: PostRequest): ResponseEntity<PostResponse> = postService
+  fun create(@Valid @RequestBody post: PostRequest): ResponseEntity<PostResponse> = postService
       .create(post)
       .let { ResponseEntity(postMapper.toResponse(it), HttpStatus.CREATED) }
 

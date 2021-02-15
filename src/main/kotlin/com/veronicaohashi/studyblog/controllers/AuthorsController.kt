@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.DeleteMapping
 import java.util.UUID
+import javax.validation.Valid
 
 @Controller
 @RequestMapping("authors")
@@ -24,7 +25,7 @@ class AuthorsController(
 ) {
 
   @PostMapping
-  fun create(@RequestBody author: AuthorRequest): ResponseEntity<AuthorResponse> = authorService
+  fun create(@Valid @RequestBody author: AuthorRequest): ResponseEntity<AuthorResponse> = authorService
       .create(authorMapper.toDomain(author))
       .let { ResponseEntity(authorMapper.toResponse(it), HttpStatus.CREATED) }
 
@@ -46,7 +47,7 @@ class AuthorsController(
   @PutMapping("{id}")
   fun update(
       @PathVariable id: UUID,
-      @RequestBody author: AuthorRequest
+      @Valid @RequestBody author: AuthorRequest
   ): ResponseEntity<AuthorResponse> = authorService
       .update(id, authorMapper.toDomain(author))
       .let { ResponseEntity.ok(authorMapper.toResponse(it!!)) }

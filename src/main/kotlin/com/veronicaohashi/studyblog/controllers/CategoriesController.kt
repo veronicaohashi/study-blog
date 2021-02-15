@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.GetMapping
+import javax.validation.Valid
 
 @Controller
 @RequestMapping("categories")
@@ -20,7 +21,7 @@ class CategoriesController(
 ) {
 
   @PostMapping
-  fun create(@RequestBody category: CategoryRequest): ResponseEntity<CategoryResponse> = service
+  fun create(@Valid @RequestBody category: CategoryRequest): ResponseEntity<CategoryResponse> = service
       .create(categoryMapper.toDomain(category))
       .let { ResponseEntity(categoryMapper.toResponse(it), HttpStatus.CREATED) }
 
