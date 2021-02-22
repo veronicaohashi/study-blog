@@ -23,8 +23,9 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+//	DB
 	runtimeOnly("org.postgresql:postgresql")
-//	runtimeOnly("com.h2database:h2")
+	implementation("org.flywaydb:flyway-core:7.5.3")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 //	OPEN API
 	implementation("org.springdoc:springdoc-openapi-ui:1.5.2")

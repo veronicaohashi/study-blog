@@ -26,18 +26,19 @@ This project is a study case of some spring modules using kotlin
       - [ ] List All Posts and add pagination, filter by author name or id, order by date 
       - [ ] Authors can only edit their own posts
   
-    - [ ] Tests MockK
+    - [ ] Tests MockK 
     - [x] Custom Exceptions
     - [x] Global Handler
     - [x] Field Validation
     - [x] Field Validation Handler
-    - [ ] Pagination, sort 
+    - [ ] Pagination, sort - NEXT3
       
 - [ ] Configuration
-    - [ ] Open API - NEXT
-    - [ ] Swagger - NEXT
+    - [ ] Open API - NEXT4
+    - [ ] Swagger - NEXT2
     - [x] Detekt
-    - [ ] PostgresDB with docker - NEXT
+    - [x] PostgresDB with docker
+    - [x] Flyway
     - [ ] CI
     - [ ] Sentry
     - [ ] Logentries
