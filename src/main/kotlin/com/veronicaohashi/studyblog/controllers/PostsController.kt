@@ -4,6 +4,8 @@ import com.veronicaohashi.studyblog.controllers.mappers.PostMapper
 import com.veronicaohashi.studyblog.controllers.requests.PostRequest
 import com.veronicaohashi.studyblog.controllers.response.PostResponse
 import com.veronicaohashi.studyblog.service.PostService
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import javax.validation.Valid
 
 @Controller
@@ -26,13 +29,9 @@ class PostsController(
       .let { ResponseEntity(postMapper.toResponse(it), HttpStatus.CREATED) }
 
   @GetMapping
-  fun getAll(): ResponseEntity<List<PostResponse>?> {
-    val posts = postService.getAll()
-
-    return if (posts.isNullOrEmpty()) {
-      ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)
-    } else {
-      ResponseEntity.ok(posts.map { postMapper.toResponse(it) })
-    }
-  }
+  fun getAll(
+      @RequestParam(value = "title", required = false, defaultValue = "") title: String?,
+      pageable: Pageable
+  ): ResponseEntity<Page<PostResponse>> = ResponseEntity
+      .ok(postService.getAll(title, pageable).map { postMapper.toResponse(it) })
 }

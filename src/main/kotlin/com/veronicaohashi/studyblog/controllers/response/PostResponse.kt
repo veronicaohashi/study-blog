@@ -10,7 +10,7 @@ data class PostResponse(
     val title: String,
     val subtitle: String,
     val content: String,
-    val written_at: LocalDateTime,
+    val writtenAt: LocalDateTime,
     val author: Author,
     val categories: List<Category>
 )

@@ -8,6 +8,8 @@ import com.veronicaohashi.studyblog.infrastrucure.repository.AuthorRepository
 import com.veronicaohashi.studyblog.infrastrucure.repository.CategoryRepository
 import com.veronicaohashi.studyblog.infrastrucure.repository.PostRepository
 import org.slf4j.LoggerFactory
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 import java.util.UUID
 
@@ -21,6 +23,8 @@ class PostService(
   private val logger = LoggerFactory.getLogger(javaClass)
 
   fun create(post: PostRequest): Post {
+    logger.info("Creating post ${post.title}")
+
     val author = authorRepository.findById(post.authorId)
         .orElseThrow { throw AuthorNotFoundException(post.authorId) }
 
@@ -42,5 +46,8 @@ class PostService(
     return postRepository.save(postToCreate)
   }
 
-  fun getAll(): List<Post>? = postRepository.findAll()
+  fun getAll(title: String? = null, pageable: Pageable): Page<Post> {
+    logger.info("Getting all posts")
+    return postRepository.findAllByTitle(title, pageable)
+  }
 }

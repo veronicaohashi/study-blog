@@ -11,6 +11,7 @@ This project is a study case of some spring modules using kotlin
     - [ ] Categories
       - [x] Create Categories
       - [x] List Categories
+      - [x] Simple pagination (using pageable)
     - [ ] Authors
       - [x] Create Authors
       - [x] List All Authors
@@ -23,25 +24,31 @@ This project is a study case of some spring modules using kotlin
       - [ ] List Posts by id (Request params)
       - [ ] Update Posts
       - [ ] Delete Posts
-      - [ ] List All Posts and add pagination, filter by author name or id, order by date 
+      - [X] List All Posts and add pagination, order by date
+      - [X] Filter by title
+      - [ ] Filter by categories [1..n]
       - [ ] Authors can only edit their own posts
   
-    - [ ] Tests MockK 
+    - [ ] Tests MockK
     - [x] Custom Exceptions
     - [x] Global Handler
     - [x] Field Validation
     - [x] Field Validation Handler
-    - [ ] Pagination, sort - NEXT3
+    - [x] Pagination, sort
+    - [ ] Transactions
+    - [ ] Add here api style guide
       
 - [ ] Configuration
-    - [ ] Open API - NEXT4
-    - [ ] Swagger - NEXT2
+    - [ ] Open API
+    - [ ] Swagger
     - [x] Detekt
     - [x] PostgresDB with docker
     - [x] Flyway
+    - [ ] Migration with docker
     - [ ] CI
     - [ ] Sentry
     - [ ] Logentries
-    - [ ] Agregador de log
+    - [ ] Log aggregator
+    - [ ] New Relic
 
    
