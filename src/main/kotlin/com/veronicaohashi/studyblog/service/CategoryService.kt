@@ -3,6 +3,8 @@ package com.veronicaohashi.studyblog.service
 import com.veronicaohashi.studyblog.domain.model.Category
 import com.veronicaohashi.studyblog.infrastrucure.repository.CategoryRepository
 import org.slf4j.LoggerFactory
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 
 @Service
@@ -15,8 +17,8 @@ class CategoryService(private val categoryRepository: CategoryRepository) {
     return categoryRepository.save(category)
   }
 
-  fun getAll(): List<Category>? {
+  fun getAll(pageable: Pageable): Page<Category> {
     logger.info("Getting all categories")
-    return categoryRepository.findAll()
+    return categoryRepository.findAll(pageable)
   }
 }
