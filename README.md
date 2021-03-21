@@ -15,18 +15,18 @@ This project is a study case of some spring modules using kotlin
     - [ ] Authors
       - [x] Create Authors
       - [x] List All Authors
-      - [x] List Authors by id
+      - [x] Get Authors by id
       - [x] Update Authors
       - [x] Delete Authors
     - [ ] Posts
       - [x] Create Posts
       - [x] List All Posts
-      - [ ] List Posts by id (Request params)
+      - [ ] Get Posts by id
       - [ ] Update Posts
       - [ ] Delete Posts
       - [X] List All Posts and add pagination, order by date
       - [X] Filter by title
-      - [ ] Filter by categories [1..n]
+      - [ ] Filter by categories
       - [ ] Authors can only edit their own posts
   
     - [ ] Tests MockK
@@ -39,8 +39,8 @@ This project is a study case of some spring modules using kotlin
     - [ ] Add here api style guide
       
 - [ ] Configuration
-    - [ ] Open API
-    - [ ] Swagger
+    - [X] Open API
+    - [X] Swagger
     - [x] Detekt
     - [x] PostgresDB with docker
     - [x] Flyway

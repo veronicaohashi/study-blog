@@ -27,8 +27,6 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql")
 	implementation("org.flywaydb:flyway-core:7.5.3")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-//	OPEN API
-	implementation("org.springdoc:springdoc-openapi-ui:1.5.2")
 //	DEVTOOLS
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 //	DETEKT
@@ -36,6 +34,10 @@ dependencies {
 	detekt("io.gitlab.arturbosch.detekt:detekt-cli:1.14.0")
 //	FIELD VALIDATION
 	implementation("org.springframework.boot:spring-boot-starter-validation")
+//	SWAGGER
+	implementation("io.springfox:springfox-swagger2:2.9.2")
+	implementation("io.springfox:springfox-swagger-ui:2.9.2")
+
 }
 
 tasks.withType<KotlinCompile> {

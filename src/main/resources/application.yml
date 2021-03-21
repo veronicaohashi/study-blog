@@ -1,6 +1,8 @@
-springdoc:
- api-docs:
-   path: /api-docs
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /api-docs
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5435/study_blog

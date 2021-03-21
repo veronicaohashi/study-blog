@@ -12,7 +12,7 @@ class PostMapper {
       title = post.title,
       subtitle = post.subtitle,
       content = post.content,
-      written_at = post.written_at!!,
+      writtenAt = post.writtenAt!!,
       author = post.author,
       categories = post.categories
   )
